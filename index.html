@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#0f172a" />
+  <title>Artérias MMII — PWA</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <p class="tag">Anatomia Topográfica • Membros Inferiores</p>
+      <h1>39 Artérias dos MMII</h1>
+      <p class="sub">Cards imersivos com imagem direcionada de <strong>imagens/1.png</strong> até <strong>imagens/39.png</strong>.</p>
+    </div>
+    <div class="actions">
+      <button id="installBtn" class="btn primary" hidden>⬇ Baixar app</button>
+      <button id="pdfBtn" class="btn">📄 Gerar PDF</button>
+      <button id="themeBtn" class="btn">🌗 Tema</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="toolbar">
+      <input id="search" type="search" placeholder="Buscar artéria, região ou palavra-chave..." />
+      <select id="filter">
+        <option value="todas">Todas as regiões</option>
+        <option value="pelve-coxa">Pelve / coxa</option>
+        <option value="glutea">Região glútea</option>
+        <option value="joelho-perna">Joelho / perna</option>
+        <option value="pe">Pé</option>
+      </select>
+    </section>
+
+    <section id="grid" class="grid" aria-live="polite"></section>
+  </main>
+
+  <dialog id="modal">
+    <button id="closeModal" class="close">×</button>
+    <div id="modalContent"></div>
+  </dialog>
+
+  <template id="cardTemplate">
+    <article class="card">
+      <div class="num"></div>
+      <img class="thumb" alt="" loading="lazy" />
+      <div class="content">
+        <h2></h2>
+        <p class="where"></p>
+        <p class="route"></p>
+        <button class="btn small">Abrir card</button>
+      </div>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
